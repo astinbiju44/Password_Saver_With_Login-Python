@@ -20,7 +20,25 @@ def lg_option(event):
     else:
         text = lgpass_entry.get()
         if text == "8520":
-            print("Correct Password")
+            top = Toplevel()
+            top.title("Password Viewer")
+            w = 650
+            h = 130
+            ws = top.winfo_screenwidth()
+            hs = top.winfo_screenheight()
+            x = (ws / 2) - (w / 2)
+            y = (hs / 2) - (h / 2)
+            top.geometry('%dx%d+%d+%d' % (w, h, x, y))
+            top.deiconify()
+            root.withdraw()
+
+
+
+
+
+
+
+
         else:
             messagebox.showerror("ERROR", "Wrong Password")
 
