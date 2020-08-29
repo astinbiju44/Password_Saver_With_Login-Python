@@ -31,7 +31,7 @@ def lg_option(event):
             top.geometry('%dx%d+%d+%d' % (w, h, x, y))
             top.deiconify()
             root.withdraw()
-            filename = '/root/LocalDisk/Project/Python/Password_Viewer/mypassword'
+            filename = '/root/LocalDisk/Project/Python/Password_Viewer/mypassword.txt'
             file = open(filename, 'r')
             account_name = []
             account_name_dupli = []
@@ -98,7 +98,7 @@ def lg_option(event):
                         b = a.capitalize()
                         con = "\n" + str(b) + "," + str(accemail_entry.get()) + "," + str(
                             accpass_entry.get())
-                        upname = '/root/LocalDisk/Project/Python/Password_Viewer/mypassword'
+                        upname = '/root/LocalDisk/Project/Python/Password_Viewer/mypassword.txt'
                         update = open(upname, "a")
                         update.write(con)
                         update.close()
@@ -160,11 +160,6 @@ def lg_option(event):
 
             close_button = Button(top, text="Close", width=15, command=root.quit)
             close_button.grid(row=2, column=0, padx=10, pady=5)
-
-
-
-
-
 
 
 
