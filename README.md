@@ -9,4 +9,4 @@ There is an update option in the application , in there you can save accounts an
 This application is protected by passwords so no one can take your account form your computer.
 
 # Open tkinter Without Windows Console
-see my video 
+see my video == https://youtu.be/LsBc1S5k05o
