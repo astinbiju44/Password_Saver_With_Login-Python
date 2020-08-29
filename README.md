@@ -8,5 +8,5 @@ Sometimes google cant save passwords
 There is an update option in the application , in there you can save accounts and view your account any time.
 This application is protected by passwords so no one can take your account form your computer.
 
-# Open tkinter Without Console window
+# Open tkinter Without Windows Console
 see my video 
