@@ -63,7 +63,21 @@ def lg_option(event):
             [account_name_dupli.append(x) for x in account_name if x not in account_name_dupli]
 
             def updateit():
-                return
+                file.close()
+                up = Tk()
+                up.title("Password Viewer")
+                up.iconbitmap("D:\OTHERS\python\Tkinter\Project\Password Viewer/1.ico")
+
+                w = 400
+                h = 200
+                ws = top.winfo_screenwidth()
+                hs = top.winfo_screenheight()
+                x = (ws / 2) - (w / 2)
+                y = (hs / 2) - (h / 2)
+                up.geometry('%dx%d+%d+%d' % (w, h, x, y))
+                up.deiconify()
+                top.destroy()
+
 
             def click(event):
                 global pass_list
