@@ -66,7 +66,6 @@ def lg_option(event):
                 file.close()
                 up = Tk()
                 up.title("Password Viewer")
-                up.iconbitmap("D:\OTHERS\python\Tkinter\Project\Password Viewer/1.ico")
 
                 w = 400
                 h = 200
@@ -77,6 +76,55 @@ def lg_option(event):
                 up.geometry('%dx%d+%d+%d' % (w, h, x, y))
                 up.deiconify()
                 top.destroy()
+
+                def add():
+                    if acc_entry.get() == "":
+                        acc_entry.insert(0, "Enter")
+                    if accemail_entry.get() == "":
+                        accemail_entry.insert(0, "Enter")
+                    if accpass_entry.get() == "":
+                        accpass_entry.insert(0, "Enter")
+                    elif acc_entry.get() == "Enter":
+                        acc_entry.delete(0, END)
+                        acc_entry.insert(0, "Enter")
+                    elif accemail_entry.get() == "Enter":
+                        accemail_entry.delete(0, END)
+                        accemail_entry.insert(0, "Enter")
+                    elif accpass_entry.get() == "Enter":
+                        accpass_entry.delete(0, END)
+                        accpass_entry.insert(0, "Enter")
+                    else:
+                        a = acc_entry.get()
+                        b = a.capitalize()
+                        con = "\n" + str(b) + "," + str(accemail_entry.get()) + "," + str(
+                            accpass_entry.get())
+                        upname = '/root/LocalDisk/Project/Python/Password_Viewer/mypassword'
+                        update = open(upname, "a")
+                        update.write(con)
+                        update.close()
+
+                        messagebox.showinfo("Success", "Successfully Updated ")
+
+                        up.withdraw()
+                        lg_option("event")
+
+                acc_label = Label(up, text="Account Name :")
+                acc_label.grid(row=0, column=0, padx=10, pady=10)
+                acc_entry = Entry(up, width=30)
+                acc_entry.grid(row=0, column=1, padx=10, pady=10)
+
+                accemail_label = Label(up, text="Account Email/Username :")
+                accemail_label.grid(row=1, column=0, padx=10, pady=10)
+                accemail_entry = Entry(up, width=30)
+                accemail_entry.grid(row=1, column=1, padx=10, pady=10)
+
+                accpass_label = Label(up, text="Password :")
+                accpass_label.grid(row=2, column=0, padx=10, pady=10, columnspan=1)
+                accpass_entry = Entry(up, width=30)
+                accpass_entry.grid(row=2, column=1, padx=10, pady=10)
+
+                add_button = Button(up, text="Add", width=25, command=add)
+                add_button.grid(row=3, column=1, padx=10, pady=10)
 
 
             def click(event):
