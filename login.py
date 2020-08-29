@@ -15,7 +15,14 @@ y = (hs/2) - (h/2)
 root.geometry('%dx%d+%d+%d' % (w, h, x, y))
 
 def lg_option(event):
-    return 
+    if lgpass_entry.get() == "":
+        lgpass_entry.insert(0, "")
+    else:
+        text = lgpass_entry.get()
+        if text == "8520":
+            print("Correct Password")
+        else:
+            messagebox.showerror("ERROR", "Wrong Password")
 
 
 
