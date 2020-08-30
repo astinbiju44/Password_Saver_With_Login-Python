@@ -42,8 +42,8 @@ def lg_option(event):
             my_scrollbar = Scrollbar(my_frame, orient=VERTICAL)
 
             def roll(e, y, r):
-                pass_list.yview("scroll", 1, "units")
-                email_list.yview("scroll", 1, "units")
+                pass_list.yview("scroll", y, "units")
+                email_list.yview("scroll", y, "units")
 
             for i in file:
                 a = i.split("\n")
