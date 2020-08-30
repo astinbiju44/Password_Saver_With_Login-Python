@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 root = Tk()
-root.title("Password Viewer")
+root.title("Account Saver")
 
 w=400
 h=150
@@ -20,7 +20,7 @@ def allinone():
     def topclose():
         root.destroy()
     top.protocol("WM_DELETE_WINDOW", topclose)
-    top.title("Password Viewer")
+    top.title("Account Saver")
     w = 650
     h = 130
     ws = top.winfo_screenwidth()
@@ -63,7 +63,7 @@ def allinone():
         top.withdraw()
         file.close()
         up = Toplevel()
-        up.title("Password Viewer")
+        up.title("Account Saver")
         w = 400
         h = 200
         ws = top.winfo_screenwidth()
