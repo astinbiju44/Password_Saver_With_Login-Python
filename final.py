@@ -17,6 +17,9 @@ root.geometry('%dx%d+%d+%d' % (w, h, x, y))
 
 def allinone():
     top = Toplevel()
+    def topclose():
+        root.destroy()
+    top.protocol("WM_DELETE_WINDOW", topclose)
     top.title("Password Viewer")
     w = 650
     h = 130
@@ -25,8 +28,6 @@ def allinone():
     x = (ws / 2) - (w / 2)
     y = (hs / 2) - (h / 2)
     top.geometry('%dx%d+%d+%d' % (w, h, x, y))
-    top.deiconify()
-    root.withdraw()
     filename = 'mypassword.txt'
     file = open(filename, 'r')
     account_name = []
@@ -164,6 +165,7 @@ def lg_option(event):
         text = lgpass_entry.get()
         if text == "8520":
             allinone()
+            root.withdraw()
         else:
             messagebox.showerror("ERROR", "Wrong Password")
 
