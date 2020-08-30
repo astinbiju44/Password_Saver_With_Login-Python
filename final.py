@@ -60,10 +60,10 @@ def allinone():
     [account_name_dupli.append(x) for x in account_name if x not in account_name_dupli]
 
     def updateit():
+        top.withdraw()
         file.close()
-        up = Tk()
+        up = Toplevel()
         up.title("Password Viewer")
-
         w = 400
         h = 200
         ws = top.winfo_screenwidth()
@@ -71,8 +71,11 @@ def allinone():
         x = (ws / 2) - (w / 2)
         y = (hs / 2) - (h / 2)
         up.geometry('%dx%d+%d+%d' % (w, h, x, y))
-        up.deiconify()
-        top.destroy()
+        def upclose():
+            up.destroy()
+            top.deiconify()
+
+        up.protocol("WM_DELETE_WINDOW", upclose)
 
         def add():
             if acc_entry.get() == "":
@@ -99,11 +102,13 @@ def allinone():
                 update = open(upname, "a")
                 update.write(con)
                 update.close()
-
                 messagebox.showinfo("Success", "Successfully Updated ")
 
-                up.withdraw()
-                lg_option("event")
+                up.destroy()
+                allinone()
+
+
+
 
         acc_label = Label(up, text="Account Name :")
         acc_label.grid(row=0, column=0, padx=10, pady=10)
