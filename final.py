@@ -31,7 +31,7 @@ def lg_option(event):
             top.geometry('%dx%d+%d+%d' % (w, h, x, y))
             top.deiconify()
             root.withdraw()
-            filename = '/root/LocalDisk/Project/Python/Password_Viewer/mypassword.txt'
+            filename = 'mypassword.txt'
             file = open(filename, 'r')
             account_name = []
             account_name_dupli = []
@@ -42,8 +42,8 @@ def lg_option(event):
             my_scrollbar = Scrollbar(my_frame, orient=VERTICAL)
 
             def roll(e, y, r):
-                pass_list.yview("scroll", 1, "units")
-                email_list.yview("scroll", 1, "units")
+                pass_list.yview("scroll", y, "units")
+                email_list.yview("scroll", y, "units")
 
             for i in file:
                 a = i.split("\n")
@@ -98,7 +98,7 @@ def lg_option(event):
                         b = a.capitalize()
                         con = "\n" + str(b) + "," + str(accemail_entry.get()) + "," + str(
                             accpass_entry.get())
-                        upname = '/root/LocalDisk/Project/Python/Password_Viewer/mypassword.txt'
+                        upname = 'mypassword.txt'
                         update = open(upname, "a")
                         update.write(con)
                         update.close()
